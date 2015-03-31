@@ -74,6 +74,7 @@
 	    	            "<div class=\"col-lg-12 text-center\">"+
 	    	            		"<form action = \"DeleteEditServlet\" name=\"register\" id=\"contactForm\" novalidate method = \"post\" >"+
 	    	            	"<img class=\"img-border\" name=\"picture\" src="+ list.get(i).getPicture()+" height=\"250\" width=\"250\">"+
+	    	            			"<input type=\"text\" readonly=\"readonly\" name=\"picture\" class=\" h4 control-label text-left hidden\" value=\"" + list.get(i).getPicture() +"\">"+ 
 	    				"</div>"+
 	    				"<div class=\"col-lg-12 text-center\">"+         
 	    	            	"<input type=\"text\" readonly=\"readonly\" name=\"caption\" class=\" h4 control-label text-left\" value=\"" + list.get(i).getCaption() + "\"disabled>"+ 
