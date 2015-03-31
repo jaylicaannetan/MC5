@@ -54,8 +54,8 @@ public class LoginServlet extends HttpServlet
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
 			session.setAttribute("password", password);
-
-		    request.getRequestDispatcher("ViewPic.jsp").forward(request, response);
+			
+			request.getRequestDispatcher("/ViewPicServlet").forward(request, response);
 		}
 		
 		else

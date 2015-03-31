@@ -72,17 +72,16 @@
 	    			add = add + "<div class=\"row\">"+
 	    	        "<div class=\"box\">"+
 	    	            "<div class=\"col-lg-12 text-center\">"+
-	    	            	"<img class=\"img-border\" id=\"change\" src="+ list.get(i).getPicture()+" height=\"250\" width=\"250\">"+
+	    	            		"<form action = \"DeleteEditServlet\" name=\"register\" id=\"contactForm\" novalidate method = \"post\" >"+
+	    	            	"<img class=\"img-border\" name=\"picture\" src="+ list.get(i).getPicture()+" height=\"250\" width=\"250\">"+
 	    				"</div>"+
 	    				"<div class=\"col-lg-12 text-center\">"+         
-	    	            	"<label for=\"name\" class=\" h4 control-label text-left\">"+list.get(i).getCaption()+"</label>"+ 
+	    	            	"<label for=\"name\" name=\"caption\" class=\" h4 control-label text-left\">"+list.get(i).getCaption()+"</label>"+ 
+	    					"<label for=\"name\" name=\"pic_id\" class=\" h4 control-label text-left\" value=\"\">"+list.get(i).getPic_Id()+"</label>"+ 
 	    	            "</div>"+
-	    	            "<div class=\"col-lg-12 text-center\">"+  
-	    					"<form action = \"DeletePicServlet\" name=\"register\" id=\"contactForm\" novalidate method = \"post\" >"+
-	    	            	"<a href=\"myProfile.html\" class=\"btn btn-default btn-lg\" type=\"delete\">Delete</a>"+	         
-	    	            	"</form>"+
-	    	            	"<form action = \"EditPicServlet\" name=\"register\" id=\"contactForm\" novalidate method = \"post\" >"+
-	    					"<a href=\"Edit.jsp\" class=\"btn btn-default btn-lg\" name ="+ String.valueOf(list.get(i).getPic_Id()) +"type=\"edit\">Edit</a>"+
+	    	            "<div class=\"col-lg-12 text-center\">"+ 
+	    	            	"<input type=\"submit\" class=\"btn btn-default btn-lg\" name=\"delete\" value=\"Delete Button\">Delete"+	         
+	    					"<input type=\"submit\" class=\"btn btn-default btn-lg\" name=\"edit\" value=\"Edit Button\">Edit"+
 	    					"</form>"+
 	    				"</div>"+
 	    	        	"</div>"+
@@ -94,17 +93,14 @@
     			add = add + "<div class=\"row\">"+
     	    	        "<div class=\"box\">"+
     	    	            "<div class=\"col-lg-12 text-center\">"+
-    	    	            		"<img class=\"img-responsive img-border\" id=\"no\" src=\"img/cover.jng\" height=\"250\" width=\"250\">"+ 
-    	    				"</div>"+
-    	    	   	 	"</div>";
+    	    	            		"<label for=\"name\" class=\" h1 control-label text-center\">"+"No Photos"+"</label>"+ 
+    	    				"</div>"+ "</div>";
     		}
     	}
     	else 
     	{
     		System.out.println("null");
     	}
-    	
- 
 	%>
 	
 </head>

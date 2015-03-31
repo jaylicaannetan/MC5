@@ -38,28 +38,33 @@ public class EditPicServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String username = request.getParameter("username");
+		HttpSession session = request.getSession();
+		
+		String username = (String) session.getAttribute("username");
+		System.out.println(username);
 		String picture = request.getParameter("picture");
+		System.out.println(picture);
 		String caption = request.getParameter("caption");
-		String pic_id = request.getParameter("pic_id");
+		System.out.println(caption);
+		String pic = request.getParameter("pic_id");
+		System.out.println(pic);
+		int pic_id = Integer.parseInt(pic);
 		
 		PicDBManager pdb = new PicDBManager();
-		
-		HttpSession session = request.getSession();
 		
 		if(pdb.edit(username, picture, caption, pic_id))
 		{
 			session.setAttribute("username", username);
 			session.setAttribute("picture", picture);
 			session.setAttribute("caption", caption);
-			session.setAttribute("caption", pic_id);
+			session.setAttribute("pic_id", pic_id);
 			System.out.println("Edit SUCCESS");
-			request.getRequestDispatcher("ViewPic.jsp").forward(request, response);
+			request.getRequestDispatcher("/ViewPicServlet").forward(request, response);
 		}
 		else
 		{
 			System.out.println("Edit FAIL");
-			response.sendRedirect("Edit.jsp");
+			response.sendRedirect("ViewPic.jsp");
 		}
 	}
 

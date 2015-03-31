@@ -38,19 +38,25 @@ public class DeletePicServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String username = request.getParameter("username");
-		String picture = request.getParameter("picture");
-		String caption = request.getParameter("caption");
-		String pic_id = request.getParameter("pic_id");
-		PicDBManager pdb = new PicDBManager();
-		
 		HttpSession session = request.getSession();
+		
+		String username = (String) session.getAttribute("username");
+		System.out.println(username);
+		String picture = request.getParameter("picture");
+		System.out.println(picture);
+		String caption = request.getParameter("caption");
+		System.out.println(caption);
+		String pic = request.getParameter("pic_id");
+		System.out.println(pic);
+		int pic_id = Integer.parseInt(pic);
+		
+		PicDBManager pdb = new PicDBManager();
 		
 		if(pdb.delete(username, picture, caption, pic_id))
 		{
 			session.setAttribute("username", username);
 			System.out.println("Delete SUCCESS");
-			request.getRequestDispatcher("ViewPic.jsp").forward(request, response);
+			request.getRequestDispatcher("/ViewPicServlet").forward(request, response);
 		}
 		else
 		{

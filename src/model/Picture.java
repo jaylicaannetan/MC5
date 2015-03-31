@@ -54,4 +54,9 @@ public class Picture {
 	{
 		return caption;
 	}
+	
+	public String toString()
+	{
+		return picture;
+	}
 }

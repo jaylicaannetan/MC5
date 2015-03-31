@@ -65,7 +65,7 @@ public class PicDBManager
         return true;
     }
     
-    public boolean edit(String picture, String caption, String username, String pic_id) 
+    public boolean edit(String picture, String caption, String username, int pic_id) 
     {
         String query = "UPDATE pictures SET picture = ?, caption = ? WHERE username = ? AND pic_id = ?";
         
@@ -75,7 +75,7 @@ public class PicDBManager
             statement.setString(1, picture);
             statement.setString(2, caption);
             statement.setString(3, username);
-            statement.setInt (4, Integer.parseInt("pic_id"));
+            statement.setInt (4, pic_id);
             
             if(statement.execute())
             {
@@ -92,7 +92,7 @@ public class PicDBManager
         return false;
     }
     
-    public boolean delete(String username, String picture, String caption, String pic_id) 
+    public boolean delete(String username, String picture, String caption, int pic_id) 
     {
         String query = "DELETE from pictures WHERE username = ? and pic_id = ?";
         
@@ -100,6 +100,7 @@ public class PicDBManager
         {
             statement = connect.getConnection().prepareStatement(query);
             statement.setString(1, username);
+            statement.setInt(2, pic_id);
             
             statement.execute();
             connect.close();
