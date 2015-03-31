@@ -65,7 +65,7 @@ public class PicDBManager
         return true;
     }
     
-    public boolean edit(String picture, String caption, String username, int pic_id) 
+    public boolean edit(String username, String picture, String caption, int pic_id) 
     {
         String query = "UPDATE pictures SET picture = ?, caption = ? WHERE username = ? AND pic_id = ?";
         

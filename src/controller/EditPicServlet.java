@@ -55,9 +55,6 @@ public class EditPicServlet extends HttpServlet {
 		if(pdb.edit(username, picture, caption, pic_id))
 		{
 			session.setAttribute("username", username);
-			session.setAttribute("picture", picture);
-			session.setAttribute("caption", caption);
-			session.setAttribute("pic_id", pic_id);
 			System.out.println("Edit SUCCESS");
 			request.getRequestDispatcher("/ViewPicServlet").forward(request, response);
 		}
