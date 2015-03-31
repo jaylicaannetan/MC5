@@ -71,6 +71,11 @@
 
     <div class="brand">Edit</div>
     <div class="container">
+    
+    <% String caption = "";
+    	if((String)session.getAttribute("caption") != null)
+    	 caption = (String) session.getAttribute("caption");
+    	%>
 
        		 <div class="row">
             		<div class="box">
@@ -78,7 +83,7 @@
           	        <img class="img-responsive img-border" id="change" src="<%= session.getAttribute("picture")%>" height="250" width="250" alt="">
 					<input id="image-upload" name="picture" class="btn btn-link" type="file" accept="image/*" value="<%= session.getAttribute("picture")%>" onchange="PreviewImage()">
 					<br>
-					 <input type="text" name ="caption" class="col-xs-4 col-sm-7 h4 control-label text-left" value="<%= session.getAttribute("caption")%>"> 
+					 <input type="text" name ="caption" class="col-xs-4 col-sm-7 h4 control-label text-left" value="<%= caption%>"> 
 					<input type="text" readonly="readonly" name="pic_id" class=" h4 control-label text-left hidden" value="<%= session.getAttribute("pic_id")%>"> 
 					<input type="button" name="Save" class="btn btn-default btn-lg" type="save"  value="Save">
 					</form>

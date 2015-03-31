@@ -69,6 +69,10 @@
     		{
 	    		for(int i=0; i<list.size(); i++) 
 	    		{		
+	    			String caption = "";
+	    			if(list.get(i).getCaption() != null)
+	    				caption = list.get(i).getCaption();
+	    			
 	    			add = add + "<div class=\"row\">"+
 	    	        "<div class=\"box\">"+
 	    	            "<div class=\"col-lg-12 text-center\">"+
@@ -77,7 +81,7 @@
 	    	            			"<input type=\"text\" readonly=\"readonly\" name=\"picture\" class=\" h4 control-label text-left hidden\" value=\"" + list.get(i).getPicture() +"\">"+ 
 	    				"</div>"+
 	    				"<div class=\"col-lg-12 text-center\">"+         
-	    	            	"<input type=\"text\" readonly=\"readonly\"  class=\" h4 control-label text-left\" value=\"" + list.get(i).getCaption() + "\"disabled>"+ 
+	    	            	"<input type=\"text\" readonly=\"readonly\"  class=\" h4 control-label text-left\" value=\"" + caption + "\"disabled>"+ 
 	    	            			"<input type=\"text\" readonly=\"readonly\" name=\"caption\" class=\" h4 control-label text-left hidden\" value=\"" + list.get(i).getCaption() + "\">"+ 
 	    	            	"<input type=\"text\" readonly=\"readonly\" name=\"pic_id\" class=\" h4 control-label text-left hidden\" value=\"" + list.get(i).getPic_Id() +"\">"+ 
 	    	            "</div>"+
