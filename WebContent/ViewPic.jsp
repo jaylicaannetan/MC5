@@ -76,12 +76,12 @@
 	    	            	"<img class=\"img-border\" name=\"picture\" src="+ list.get(i).getPicture()+" height=\"250\" width=\"250\">"+
 	    				"</div>"+
 	    				"<div class=\"col-lg-12 text-center\">"+         
-	    	            	"<label for=\"name\" name=\"caption\" class=\" h4 control-label text-left\">"+list.get(i).getCaption()+"</label>"+ 
-	    					"<label for=\"name\" name=\"pic_id\" class=\" h4 control-label text-left\" value=\"\">"+list.get(i).getPic_Id()+"</label>"+ 
+	    	            	"<input type=\"text\" readonly=\"readonly\" name=\"caption\" class=\" h4 control-label text-left\" value=\"" + list.get(i).getCaption() + "\"disabled>"+ 
+	    					"<input type=\"text\" readonly=\"readonly\" name=\"pic_id\" class=\" h4 control-label text-left hidden\" value=\"" + list.get(i).getPic_Id() +"\">"+ 
 	    	            "</div>"+
 	    	            "<div class=\"col-lg-12 text-center\">"+ 
-	    	            	"<input type=\"submit\" class=\"btn btn-default btn-lg\" name=\"delete\" value=\"Delete Button\">Delete"+	         
-	    					"<input type=\"submit\" class=\"btn btn-default btn-lg\" name=\"edit\" value=\"Edit Button\">Edit"+
+	    	            	"<input type=\"submit\" class=\"btn btn-default btn-lg\" name=\"delete\" value=\"Delete\">"+	         
+	    					"<input type=\"submit\" class=\"btn btn-default btn-lg\" name=\"edit\" value=\"Edit\">"+
 	    					"</form>"+
 	    				"</div>"+
 	    	        	"</div>"+
